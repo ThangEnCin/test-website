@@ -1,0 +1,294 @@
+
+
+/* styles.css */
+html, body {
+    height: 100%; /* Ensures the page fills the full viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+	margin-bottom: 20px; /* Adjust the space as needed */
+}
+
+.logo {
+    width: 150px; /* Adjust based on your logo size */
+    height: auto;
+	margin-bottom: 20px; /* Adjust the space as needed */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+/* Main content section */
+.content {
+    flex: 1; /* Fills remaining space between header and footer */
+    padding: 30px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+form label {
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input, Select, Textarea Styling */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Centering images */
+.center-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto;
+}
+
+.developer-image {
+    max-width: 100%;      /* Makes the image responsive */
+    height: auto;         /* Keeps the aspect ratio of the image */
+    width: 300px;         /* Adjust the width as needed */
+}
+
+
+/* Phone input with dropdown */
+.phone-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phone-container select,
+.phone-container input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 48%;
+}
+
+.phone-container select {
+    margin-right: 4%;
+}
+
+.phone-container input {
+    flex: 1;
+}
+
+/* Submit Button Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    flex-shrink: 0;
+}
+
+/* Job and course cards */
+.job-card, .course-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3, .course-card h3 {
+    margin-top: 0;
+}
+
+.course-card a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.course-card a:hover {
+    text-decoration: underline;
+}
+
+.apply-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.apply-button:hover {
+    background-color: #45a049;
+}
+
+/* Apply Now button styling */
+.apply-now-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.apply-now-btn:hover {
+    background-color: #45a049;
+}
+
+/* Phone number with country code dropdown */
+.phone-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between dropdown and input */
+}
+
+.phone-container select,
+.phone-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.phone-container select {
+    width: 120px; /* Adjust the width of the dropdown */
+}
+
+.phone-container input {
+    flex: 1; /* Make the input field take the remaining space */
+    width: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    .phone-container {
+        flex-direction: column;
+    }
+
+    .phone-container select, .phone-container input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

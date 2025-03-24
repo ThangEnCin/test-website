@@ -1,0 +1,127 @@
+<!--apply.html--!>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Beans Web - Apply Now</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none; /* Hide by default */
+        }
+    </style>
+    <script>
+        // JavaScript Validation Function
+        function validateForm(event) {
+            let valid = true;
+
+            // Clear previous error messages
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function(error) {
+                error.style.display = 'none';
+            });
+
+            // Get the values from the form fields
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Email Validation: Must be in the format name@email.com
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                valid = false; // Invalid email
+            }
+
+            // Phone Validation: Must be a number and exactly 11 digits
+            const phonePattern = /^\d{11}$/; // Regular expression for 11 digits only
+            if (!phonePattern.test(phone)) {
+                document.getElementById('phone-error').style.display = 'block';
+                valid = false; // Invalid phone number
+            }
+
+            // Prevent form submission if invalid
+            if (!valid) {
+                event.preventDefault(); // Stop the form submission
+            }
+
+            return valid; // Proceed if valid
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Hot Beans Web Logo" class="logo">
+        <h1>Apply for a Job</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trainees.html">Trainee Profiles</a></li>
+                <li><a href="jobs.html">Job Specifications</a></li>
+                <li><a href="apply.html">Apply Now</a></li>
+                <li><a href="courses.html">Web Development Courses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Application Form</h2>
+
+        <form action="submit-application.php" method="post" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <!-- Inline error message for email -->
+                <span id="email-error" class="error-message">Please enter a valid email address (e.g., name@email.com).</span>
+            </div>
+
+            <!-- Phone Number with Country Code Dropdown -->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <div class="phone-container">
+                    <select id="country-code" name="country-code" required>
+                        <option value="+1">+1 (USA/Canada)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <!-- Inline error message for phone -->
+                <span id="phone-error" class="error-message">Please enter a valid phone number with 11 digits.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position Applying For:</label>
+                <select id="position" name="position">
+                    <option value="junior-web-dev">Junior Web Developer</option>
+                    <option value="frontend-dev">Front-End Developer</option>
+                </select>
+            </div>
+
+           
+			
+			<div class="form-group">
+                 <label for="join-reason">Why You Want to Join Us:</label>
+                 <textarea id="join-reason" name="join-reason" rows="6" required></textarea>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hot Beans Web</p>
+    </footer>
+</body>
+</html>
